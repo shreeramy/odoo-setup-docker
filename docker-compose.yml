@@ -1,0 +1,24 @@
+version: '3'
+services:
+ odoo17:
+   image: odoo:17.0 #image of the odoo
+   env_file: .env #environment file(contains odoo environment)
+   depends_on:
+     - postgres17
+   ports:
+     - "8017:8069" #port mapping
+     - "8020:8019"  # longpolling_port
+   volumes: #mapping directory
+     - data:/var/lib/odoo
+     - ./config:/etc/odoo 
+     - ./extra-addons:/mnt/extra-addons
+   command: ["odoo"]
+
+ postgres17: 
+   image: postgres:13 #postgres image
+   env_file: .env #environment file(contains postgres environment)
+   volumes:
+     - db:/var/lib/postgresql/data/pgdata
+volumes:
+ data:
+ db:
