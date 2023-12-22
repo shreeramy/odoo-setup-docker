@@ -1,8 +1,8 @@
 This is new repo to install odoo using docker
 
 
-Install docker 
-  
+1) **Install docker 
+**  
    = sudo apt-get update
   
   sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
@@ -24,3 +24,14 @@ Install docker
   
   sudo chmod +x /usr/local/bin/docker-compose
   docker-compose --version
+
+
+2) Then clone this repo.
+
+3) Your custom modules will be in extra-addons folder.
+
+4) Your odoo.conf in config folder (If you want to change anything)
+
+5) Run this command -> docker-compose up (You need to run this command in the folder where docker-compose.yml file exist.
+
+6) Odoo will run on 8017 port : localhost:8017
